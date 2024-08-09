@@ -1,20 +1,22 @@
-body{
-    margin: 0;
-    background-image: url(istockphoto.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+:root{
+    --bgcolor:rgb(230, 225, 225);
 }
 @font-face {
     font-family:myFirstFont;
-    src: url(font/leaflet-gap.ttf);
+    src: url(font/Spotlight.otf);
  }
+body{
+    margin: 0;
+    background-color: var(--bgcolor);
+}
+
 header{
     position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
     height:fit-content;
+    background-color: var(--bgcolor);
     overflow: hidden;
 }
 /*NAV-BAR STYLE CODE */
@@ -30,10 +32,7 @@ nav{
     position: sticky;
     position: -webkit-sticky;
     top: 0;  
-    background-image: url(istockphoto.jpg);
-    background-repeat: no-repeat;
-    background-position:center;
-    background-size: cover;
+    background-color: var(--bgcolor);
     z-index: 1000;
 }
 nav .logo{
@@ -46,6 +45,7 @@ nav .logo img{
 object-fit: contain;
 margin: 0;
 padding: 0px;
+mix-blend-mode:multiply;
 }
 nav .links{
     
@@ -104,30 +104,49 @@ nav .contactt{
 .title{
     text-align: center;
     color: rgb(58, 58, 58);
-    font-size:45px;
+    font-size:50px;
     font-weight: bold;
     font-family:myFirstFont;
-
+    animation: zoomout 2s ease-in-out 1 forwards;
+}
+@keyframes zoomout {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 .profile{
     position: relative;
     margin-top:55px;
     text-align: center;
-    height:200px;
-   
+    height:200px; 
     
 }
 .profile span{
  
-    }
+}
 .profile img{
-    filter: saturate(0);
+    width:250px;
+    height:300px; 
     border-radius: 10px;
     position: relative;
     z-index:100;
     bottom: 100px;
-    object-fit: cover;
+    /*-webkit-box-reflect: left -140px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+    */filter: drop-shadow(-10px 0px 1px rgba(0, 0, 0, 0.329))saturate(0);
     object-position: 100% 0%;
+    animation: inout 2s ease-in-out 1 forwards ;
+    transition:1s;
+}
+@keyframes inout {
+    0%{bottom: -100px;opacity: 0;}
+    25%{bottom: -50px;opacity: 0;}
+    50%{bottom: -0px;opacity: 0;}
+    75%{bottom: 50px;opacity: 0;}
+    100%{bottom: 100px;opacity: 1;}
+
 }
 #box-1{
     min-width:20%;
@@ -145,7 +164,7 @@ nav .contactt{
     width:30%;
     height:130px;
     border-radius: 20px;
-    background-color: rgb(218, 218, 221);
+    background-color: rgb(184, 184, 188);
     position: absolute;
     transform: skewX(-10deg);
     top:69px;
@@ -248,10 +267,21 @@ nav .contactt{
     border-radius:100px;
     position: relative;
     cursor: pointer;
+    animation-name: easout;
+    animation-timing-function:linear;
+    animation-timeline: view();
+    animation-range:0px 250px;
     transition: 0.5s;
     &:hover{
         background-color: white;
-    }
+    } 
+    
+}
+
+@keyframes easout {
+    from{opacity: 0;scale: 0;}
+    to{opacity: 1;scale: 1;}
+    
 }
 
 #service-3:hover h3{
@@ -272,7 +302,9 @@ nav .contactt{
 
 i{color: white;font-size: xx-large;}
 
-#service-1 div,#service-2 div,#service-3 div{
+#service-1 div,
+#service-2 div,
+#service-3 div{
     background-color: rgba(164, 107, 255, 0.485);
     padding: 20px;
     width: fit-content;
@@ -284,7 +316,8 @@ i{color: white;font-size: xx-large;}
 
 }
 .service-list h3{
-    color: white;font-size:x-large;
+    color: white;
+    font-size:x-large;
     transition: 0.5s;
 }
 .service-list p{
@@ -296,13 +329,12 @@ i{color: white;font-size: xx-large;}
     font-size: small;
 }
 .service-list span i{
-    font-size:medium;top: 3px;position: relative;color: rgb(178, 176, 176);
+    font-size:medium;
+    top: 3px;position: relative;
+    color: rgb(178, 176, 176);
 }
 @media (max-width:600px) {
-    .service-list{
-       flex-wrap: wrap;
-
-    }
+    .service-list{flex-wrap: wrap;}
 }
 
 /*ABOUT STYLE CODE HERE*/
@@ -333,19 +365,114 @@ position: relative;
 }
 .about-image{
     width: 100%;height: 290px;
-    background-image: url(imges/image.jpeg);
+    position: relative;
+    /*background-image: url(imges/image.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     filter:saturate(0) contrast(1.5);
-    background-position:0% 20%;
-    border-radius: 10px;
+    background-position:0% 20%;*/
     transition: 1s;
     cursor: pointer;
-    &:hover{
-        filter: saturate(1);
+
+}
+.about-image .carosel{
+
+}
+.about-image::before{
+    content:' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(252,70,107,1) 0% ,rgb(4, 34, 186) 100%);
+    border-radius: 50% 50% 30% 30%;
+    filter: blur(50px);
+}
+.about-image .carosel .list{
+
+}
+.about-image .carosel .list .item{
+    position: absolute; 
+    width: 100%;
+    text-align: center;
+    
+}
+.about-image .carosel .list .item img{
+    width:fit-content;
+    height: 290px; 
+    border-radius: 50px;
+}
+.about-image .carosel .list .item:nth-child(1){
+     translate:0% 0%;
+     scale: 1;
+     z-index: 10;
+}
+.about-image .carosel .list .item:nth-child(2){
+    translate: 85% 0%;
+    scale: 0.6;
+    filter: blur(7px);
+    opacity: 0.4;
+}
+.about-image .carosel .list .item:nth-child(3){
+    translate:135% 0%;
+    scale: 0.3;
+    filter: blur(10px);
+    opacity: 0.3;
+}
+/* slide animation */
+.about-image .carosel .list .item:nth-child(1){
+    animation: position1 0.5s ease-in-out  1 forwards ;
+}
+@keyframes position1 {
+    from{
+        translate: 85% 0%;
+        scale: 0.6;
+        filter: blur(5px);
+        opacity: 0.5;
     }
 }
-.about-details{width: 100%;height: 290px;}
+.about-image .carosel .list .item:nth-child(2){
+    animation: position2 0.5s ease-in-out  1 forwards ;
+}
+@keyframes position2 {
+    from{
+    translate:135% 0%;
+    scale: 0.3;
+    filter: blur(10px);
+    opacity: 0.4;
+    }
+}
+.about-image .carosel .list .item:nth-child(3){
+    animation: position3 0.5s ease-in-out  1 forwards ;
+}
+@keyframes  position3 {
+    from{
+        translate: 0% 0%;
+    }
+}
+.about-image .item-position{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%);
+}
+.about-image .item-position button{
+    all: unset;
+    
+}
+.about-details{
+    width: 100%;
+    height: 290px;
+    animation: zoomin linear;
+    animation-timeline: view();
+    animation-range:0px 200px;
+
+}
+@keyframes zoomin {
+    from{opacity: 0;scale: 1 0;}
+    to{
+        opacity: 1;scale: 1;
+    }
+}
 
 .about-details :nth-child(3),.about-details :nth-child(4){
     font-size:45px;
@@ -390,14 +517,22 @@ position: relative;
     gap: 15px;
     margin:50px;
 }
-.education,
-.work{
+.education,.work{
     background-color: rgb(241, 239, 239);
     width:100%;
     height: fit-content;
     color: blueviolet;
     border-radius: 10px;
     padding: 10px;
+    animation: zoomin3  ease-out;
+    animation-timeline: view();
+    animation-range: 0px 250px;
+}
+@keyframes zoomin3 {
+    0%{opacity: 0;scale: 1;}
+    30%{opacity: 0;scale: 1;}
+    60%{opacity:0;scale:1;}
+    100%{opacity: 1;scale: 1;}
 }
 #insitute,#college,#school{
     display: flex;
@@ -444,6 +579,16 @@ font-size: small;
 }
 .Message{
     font-family: secondfont;
+    animation: zoomin2  ease-in-out;
+    animation-timeline: view();
+    animation-range: 0px 250px;
+    transition:1s;
+}
+@keyframes zoomin2 {
+    0%{opacity: 0;scale: 1;}
+    30%{opacity: 0;scale: 1;}
+    60%{opacity:0;scale:1;}
+    100%{opacity: 1;scale: 1;}
 }
 .Message button{
     border: none;background-color: rgba(130, 210, 83, 0.889);
@@ -535,7 +680,7 @@ font-size: small;
 .contact-form form :nth-child(2) input,
 .contact-form form :nth-child(3) input{
     position: relative;
-    border-radius: 13px;
+    border-radius: 5px;
     position: relative;
     border: none;
     outline: none;
@@ -553,7 +698,7 @@ font-size: small;
     display: grid;
 }
 .contact-form form textarea{
-border-radius: 10px ;    
+border-radius: 5px ;    
 background-color: rgb(135, 100, 215);
 outline: none;
 border: none;

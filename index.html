@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="nav-bar">
-        <div class="logo"><img src="imges/v-logo.png" style="mix-blend-mode:multiply;" width="40" alt=""><span style="font-size:medium;">Vallarasu</span></div>
+        <div class="logo"><img src="imges/v-logo.png"  width="40" alt=""><span style="font-size:medium;">Vallarasu</span></div>
         <div class="links">
             <ul>
               <li><a href="">Home</a><div class="border"></div></li>
@@ -31,7 +31,7 @@
         <div class="profile">
             <div id="box-1"></div>
             <div id="box-2"></div>
-            <div id="img"><img src="imges/1710304863802.png" width="250px"  height="300px" alt=""></div>
+            <div id="img"><img src="imges/1710304863802.png"  alt="profileimage"></div>
         </div>
         <div class="hire"><a href=""><button id="btn1">Portfolio</button></a><a href="https://mail.google.com/mail/u/0/?pli=1#sent?compose=new" target="_blank"><button id="btn2">Hire Me</button></a></div>
     </header>
@@ -67,7 +67,17 @@
     
     <div class="about-article" id="about-article">
     <div class="aboutme">
-        <div class="about-image"><h3 style="visibility:hidden;">image</h3></div>
+        <div class="about-image"><div class="carosel">
+            <div class="list">
+                <div class="item"><img src="imges/image8.jpg" alt=""></div>
+                <div class="item"><img src="imges/image9.jpg" alt=""></div>
+                <div class="item"><img src="imges/image7.jpeg" alt=""></div>
+            </div>
+            <div class="item-position">
+                <button id="slide1"></button>
+                
+            </div>
+        </div></div>
         <div class="about-details"><span>- About Me</span><br><span>Who is</span> <span>vallarasu?</span>
         <p>Certified python developer and webdesigner offering 1 and of year's of extensive of experience and exceptional analytical and critical thinking skills and many more...</p>
         <p><span style="color: black;font-weight: bold;font-size: xx-large;">13</span><b>+</b><br><span style="font-size: large;color: rgb(114, 112, 112);">Projects Completed</span></p>
@@ -129,10 +139,10 @@
         </div>
         <div class="contact-form">
             <form >
-                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap: 10px;justify-content: space-between;"><input type="text" name="" placeholder="First Name*" id=""><input type="text" placeholder="Last Name*" name="" id=""></div>
-                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap: 10px;justify-content: space-between;"><input type="text" name="" placeholder="Email*" id=""><input type="text" placeholder="Phone Number *" name="" id=""></div>
-                <div><input type="text" placeholder="Subject*" name="" id=""></div>
-                <div style="display:grid;"><textarea name="" id="" placeholder="Message*" cols="30" rows="8"></textarea></div>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap: 10px;justify-content: space-between;"><input type="text" name="" placeholder="First Name*" id=""><input type="text" placeholder="Last Name*" required name="" id=""></div>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap: 10px;justify-content: space-between;"><input type="text" name="" placeholder="Email*" id=""><input type="text" placeholder="Phone Number *" required name="" id=""></div>
+                <div><input type="text" placeholder="Subject*" required name="" id=""></div>
+                <div style="display:grid;"><textarea required name="" id="" placeholder="Message*" cols="30" rows="8"></textarea></div>
                 <button>Send Message <i class="fa-solid fa-arrow-right" style="font-size: small;color:white;padding: 5px;border-radius: 50px;background-color: blueviolet;"></i></button>
             
             </form>
@@ -206,5 +216,6 @@
             document.getElementById('back_end').click();
         }
     </script>
+    <script src="index.js"></script>
 </body>
 </html>
