@@ -35,11 +35,13 @@ nav{
     background-color: var(--bgcolor);
     z-index: 1000;
 }
+
 nav .logo{
     font-family:myFirstFont;
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items: center;
+    width: 20%;
 }
 nav .logo img{
 object-fit: contain;
@@ -48,14 +50,16 @@ padding: 0px;
 mix-blend-mode:multiply;
 }
 nav .links{
-    
+    width: 100%;
+ 
 }
 nav .links ul{
     display: flex;
+    justify-content: center;
     gap:15px;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: small;
-    
+    font-size: small; 
+    padding: 0; 
 }
 li{
     list-style-type: none;
@@ -79,20 +83,23 @@ li{
     transform-origin:center;transition: 0.5s;
 }
 nav .contactt{
-    margin-right: 30px;
+    width:20%;
+    text-align: center;
     background-color: rgba(92, 3, 201, 0.933);
     border-radius: 20px;
     color: white;
     font-family:Arial, Helvetica, sans-serif;
     font-size: small;
-    padding: 7px 15px 7px 15px;
+    padding-block: 5px;
     cursor: pointer;
     transition: 0.2s;
 }
 .contactt button{
-    background-color: transparent;border: none;color: rgb(181, 178, 178);
+    background-color: transparent;
+    border: none;
+    color:white;
     &:hover{
-        color: white;
+        color: rgb(125, 123, 123);
     }
 }
 @media (max-width:650px) {
@@ -647,15 +654,14 @@ font-size: small;
    /* border: 1px solid red;*/
 }
 .contact-form form{ 
-   
-    position: relative;
-    
+    position: relative; 
 }
 .contact-form form button{
-    margin: 5px;padding: 10px;
+    margin: 5px;
+    padding: 10px;
     background-color: rgba(52, 217, 52, 0.755);
     border:none;
-    border-radius:50px;
+    border-radius:5px;
     &:hover{
         box-shadow: rgb(0, 0, 0) 0px 0px 5px;
     }
