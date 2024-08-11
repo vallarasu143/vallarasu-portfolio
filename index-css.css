@@ -12,6 +12,7 @@ body{
 
 header{
     position: relative;
+    width: auto;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -834,4 +835,43 @@ footer .nav-con{
 
 button{
     cursor: pointer;
+}
+@font-face {
+    font-family: hirefont;
+    src: url(/font/zwriter-eye-fs.ttf);
+}
+#dragbutton{
+    position: absolute;
+    width: 60px;
+    height:60px;
+    border-radius:100%;
+    place-content: center;
+    text-align: center;
+    position: fixed;
+    font-size:8px;
+    font-weight: bold;
+    background-image: url(/imges/circle.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top:85%;
+    left:85%;
+    font-family:hirefont ;
+    text-shadow: white 1px 0px 1px;
+    transition: .3s;
+    cursor: pointer;
+    overflow: hidden;
+    z-index:1000;
+}
+#dragbutton::after{
+    position:absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    scale: 0.85;
+    border-radius: 100%;
+    background-color: rgb(67, 218, 67);
+    z-index:-1;
 }
