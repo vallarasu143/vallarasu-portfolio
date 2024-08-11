@@ -142,8 +142,7 @@ nav .contactt{
     position: relative;
     z-index:100;
     bottom: 100px;
-    /*-webkit-box-reflect: left -140px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
-    */filter: drop-shadow(-10px 0px 1px rgba(0, 0, 0, 0.329))saturate(0);
+    filter: drop-shadow(-10px 0px 1px rgba(0, 0, 0, 0.329))saturate(0);
     object-position: 100% 0%;
     animation: inout 2s ease-in-out 1 forwards ;
     transition:1s;
@@ -836,10 +835,6 @@ footer .nav-con{
 button{
     cursor: pointer;
 }
-@font-face {
-    font-family: hirefont;
-    src: url(/font/zwriter-eye-fs.ttf);
-}
 #dragbutton{
     position: absolute;
     width: 60px;
@@ -850,18 +845,21 @@ button{
     position: fixed;
     font-size:8px;
     font-weight: bold;
-    background-image: url(/imges/circle.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     top:85%;
     left:85%;
-    font-family:hirefont ;
+    font-family:secondfont ;
     text-shadow: white 1px 0px 1px;
     transition: .3s;
     cursor: pointer;
     overflow: hidden;
     z-index:1000;
+}
+#dragbutton a{
+    text-decoration: none;
+    color: black;
 }
 #dragbutton::after{
     position:absolute;
